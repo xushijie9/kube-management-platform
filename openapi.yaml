@@ -3,17 +3,16 @@
 
 openapi: 3.0.3
 info:
-    title: Greeter API
+    title: KubeService API
     description: The greeting service definition.
     version: 0.0.1
 paths:
-    /helloworld/{name}:
+    /kube/{name}:
         get:
             tags:
-                - Greeter
-                - subgroup
+                - KubeService
             description: Sends a greeting
-            operationId: Greeter_SayHello
+            operationId: KubeService_SayHello
             parameters:
                 - name: name
                   in: path
@@ -26,14 +25,14 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/helloworld.v1.HelloReply'
+                                $ref: '#/components/schemas/kube.v1.HelloReply'
 components:
     schemas:
-        helloworld.v1.HelloReply:
+        kube.v1.HelloReply:
             type: object
             properties:
                 message:
                     type: string
             description: The response message containing the greetings
 tags:
-    - name: Greeter
+    - name: KubeService

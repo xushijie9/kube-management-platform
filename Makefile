@@ -62,6 +62,11 @@ all:
 	make api;
 	make config;
 	make generate;
+wire:
+	cd cmd/kube-management-platform; wire ;cd -
+
+run:
+	kratos run
 
 # show help
 help:
